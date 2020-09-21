@@ -63,5 +63,17 @@ namespace Igtampe.DictionaryOnDiskTest {
             for(int i = 0; i < DOD3.Length; i++) { Assert.AreEqual(DOD3[i],PreppedDOD[i]); }
         }
 
+        [TestMethod]
+        public void TestSaveAndLoad() {
+
+            Dictionary<string,string> PreSave = DOD.Parse(DOD3);
+
+            DOD.Save(PreSave,"TestFile.DOD");
+            Dictionary<string,string> PostSave = DOD.Load("TestFile.DOD");
+
+            foreach(string Key in PreSave.Keys) {Assert.AreEqual(PreSave[Key],PostSave[Key]);}
+
+        }
+
     }
 }
