@@ -68,7 +68,7 @@ namespace Igtampe.DictionaryOnDisk{
 
         /// <summary>Prepares the dictionary for saving, in case the DOD has to be saved somewhere other than disk.</summary>
         /// <param name="Dict">Dictionary to convert to a DOD</param>
-        /// <returns>A DOD string</returns>
+        /// <returns>A DOD Array ready to be saved somewhere.</returns>
         public static string[] Prep(Dictionary<string,string> Dict) {
             List<String> ReturnList = new List<String>();
             foreach(KeyValuePair<string,string> Entry in Dict) {
