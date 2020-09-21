@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryOnDisk", "DictionaryOnDisk\DictionaryOnDisk.csproj", "{AE742B8A-76CD-4C63-9A79-05441D09E41E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryOnDiskTest", "DictionaryOnDiskTest\DictionaryOnDiskTest.csproj", "{319C9C1C-CEF8-47F3-9B41-65CCBCFA1F64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE742B8A-76CD-4C63-9A79-05441D09E41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE742B8A-76CD-4C63-9A79-05441D09E41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE742B8A-76CD-4C63-9A79-05441D09E41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319C9C1C-CEF8-47F3-9B41-65CCBCFA1F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319C9C1C-CEF8-47F3-9B41-65CCBCFA1F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319C9C1C-CEF8-47F3-9B41-65CCBCFA1F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319C9C1C-CEF8-47F3-9B41-65CCBCFA1F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
