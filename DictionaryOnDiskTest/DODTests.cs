@@ -58,8 +58,7 @@ namespace Igtampe.DictionaryOnDiskTest {
             string[] PreppedDOD = DOD.Prep(DOD.Parse(DOD3));
 
             //DOD.PREP has \n. In order for this simulation to go through, it must be written.
-            string BeepBoop = string.Join("\n",PreppedDOD);
-            PreppedDOD = BeepBoop.Split('\n');
+            PreppedDOD = string.Join("\n",PreppedDOD).Split('\n');
             
             for(int i = 0; i < DOD3.Length; i++) { Assert.AreEqual(DOD3[i],PreppedDOD[i]); }
         }
