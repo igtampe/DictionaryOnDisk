@@ -20,38 +20,38 @@ namespace Igtampe.DictionaryOnDisk{
 
             //Go through each line.
             for(int i = 0; i < Lines.Length; i++) {
+                if(!string.IsNullOrWhiteSpace(Lines[i])) {
+                    //Find the first colon
+                    int Colon = Lines[i].IndexOf(':');
+                    if(Colon == -1) { throw new InvalidOperationException("Malformed DOD entry at line " + (i + 1)); } //Catch if there is no colon.
 
-                //Find the first colon
-                int Colon = Lines[i].IndexOf(':');
-                if(Colon == -1) { throw new InvalidOperationException("Malformed DOD entry at line " + (i+1)); } //Catch if there is no colon.
+                    //Find the key:
+                    string Key = Lines[i].Substring(0,Colon);
+                    string Value;
 
-                //Find the key:
-                string Key = Lines[i].Substring(0,Colon);
-                string Value;
+                    //Find the value.
+                    if(Lines[i][Colon + 1] == '{') {
+                        //Multiline value.
+                        Value = Lines[i].Substring(Colon + 2);
+                        int startI = i;
 
-                //Find the value.
-                if(Lines[i][Colon + 1] == '{') {
-                    //Multiline value.
-                    Value = Lines[i].Substring(Colon+2);
-                    int startI = i;
+                        //Keep going down the array until the value ends in '}'
+                        while(!Value.EndsWith("}")) {
+                            i++;
+                            if(i == Lines.Length) { throw new IndexOutOfRangeException("Unfinished Multi-line DOD Entry starting at line " + startI); } //make sure we don't go on looking for a } that doesn't exist.
+                            Value += "\n" + Lines[i];
+                        }
 
-                    //Keep going down the array until the value ends in '}'
-                    while(!Value.EndsWith("}")) {
-                        i++;
-                        if(i == Lines.Length) { throw new IndexOutOfRangeException("Unfinished Multi-line DOD Entry starting at line " + startI); } //make sure we don't go on looking for a } that doesn't exist.
-                        Value += "\n" + Lines[i];
+                        //Trim that }
+                        Value = Value.TrimEnd('}');
+
+                    } else {
+                        Value = Lines[i].Substring(Colon + 1);
                     }
 
-                    //Trim that }
-                    Value=Value.TrimEnd('}');
-
-                } else {
-                    Value = Lines[i].Substring(Colon+1);
+                    //Add the Key Value pair.
+                    ReturnDictionary.Add(Key,Value);
                 }
-
-                //Add the Key Value pair.
-                ReturnDictionary.Add(Key,Value);
-
             }
 
             return ReturnDictionary;
