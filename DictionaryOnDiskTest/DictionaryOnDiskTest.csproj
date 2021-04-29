@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DictionaryOnDisk\DictionaryOnDisk.csproj">
-      <Project>{ae742b8a-76cd-4c63-9a79-05441d09e41e}</Project>
+      <Project>{db542df5-af62-461c-9581-38248b6915c8}</Project>
       <Name>DictionaryOnDisk</Name>
     </ProjectReference>
   </ItemGroup>
