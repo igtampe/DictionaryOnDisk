@@ -21,6 +21,10 @@
     <AssemblyOriginatorKeyFile>The Chopo Signature.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\igtam\source\repos\DictionaryOnDisk\DictionaryOnDisk\DictionaryOnDisk.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="The Chopo Signature.pfx" />
   </ItemGroup>
