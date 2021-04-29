@@ -10,8 +10,8 @@
     <Copyright>(C)2021 Igtampe, No Rights Reserved</Copyright>
     <Authors>Igtampe</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/igtampe/DictionaryOnDisk/settings</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/igtampe/DictionaryOnDisk/settings</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/igtampe/DictionaryOnDisk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/igtampe/DictionaryOnDisk</RepositoryUrl>
     <PackageIcon>DOD Icon.png</PackageIcon>
     <PackageTags>Data Storage Dictionary Map</PackageTags>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
