@@ -74,7 +74,7 @@ namespace Igtampe.DictionaryOnDisk{
             foreach(KeyValuePair<string,string> Entry in Dict) {
                 if(Entry.Key.Contains("\n")) { throw new InvalidOperationException("Key " + Entry.Key + " with value " + Entry.Value + " has a line break. It cannot be saved"); }
                 string DODEntry = Entry.Key + ":";
-                if(Entry.Value.Contains("\n")) { DODEntry += "{" + Entry.Value + "}"; } else { DODEntry += Entry.Value; }
+                if(Entry.Value?.Contains("\n")==true) { DODEntry += "{" + Entry.Value + "}"; } else { DODEntry += Entry.Value; }
                 ReturnList.Add(DODEntry);
             }
 
