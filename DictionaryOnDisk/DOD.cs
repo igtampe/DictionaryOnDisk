@@ -30,7 +30,9 @@ namespace Igtampe.DictionaryOnDisk{
                     string Value;
 
                     //Find the value.
-                    if(Lines[i][Colon + 1] == '{') {
+                    if(Lines[i].Length == Colon+1) {
+                        Value = "";
+                    } else if(Lines[i][Colon + 1] == '{') {
                         //Multiline value.
                         Value = Lines[i].Substring(Colon + 2);
                         int startI = i;

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DictionaryOnDisk</name>
+    </assembly>
+    <members>
+        <member name="T:Igtampe.DictionaryOnDisk.DOD">
+            <summary>Dictionary On Disk utilities</summary>
+        </member>
+        <member name="M:Igtampe.DictionaryOnDisk.DOD.Load(System.String)">
+            <summary>Loads a Dictionary from disk</summary>
+            <param name="Filename">Filename of the DOD to load</param>
+            <returns>The loaded DOD (A string,string dictionary)</returns>
+        </member>
+        <member name="M:Igtampe.DictionaryOnDisk.DOD.Parse(System.String[])">
+            <summary>Parses an array of lines that formatted like a DOD. Used by the load function, and made public in case a DOD has to be loaded from somewhere other than disk.</summary>
+            <param name="Lines">Lines of a DOD</param>
+            <returns>The loaded DOD (A string,string Dictionary)</returns>
+        </member>
+        <member name="M:Igtampe.DictionaryOnDisk.DOD.Save(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>Handles saving the dictionary to disk.</summary>
+            <param name="Dict">Dictionary to save</param>
+            <param name="Filename">Filename to save it to</param>
+        </member>
+        <member name="M:Igtampe.DictionaryOnDisk.DOD.Prep(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>Prepares the dictionary for saving, in case the DOD has to be saved somewhere other than disk.</summary>
+            <param name="Dict">Dictionary to convert to a DOD</param>
+            <returns>A DOD Array ready to be saved somewhere.</returns>
+        </member>
+    </members>
+</doc>

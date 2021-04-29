@@ -7,7 +7,7 @@ namespace Igtampe.DictionaryOnDiskTest {
     public class DODTests {
 
         public string[] DOD1 = { "foo:bar" };
-        public string[] DOD2 = { 
+        public string[] DOD2 = {
             "Yee:Haw",
             "Coincidence:Probably not",
             "Mystery:Maybe",
@@ -59,7 +59,7 @@ namespace Igtampe.DictionaryOnDiskTest {
 
             //DOD.PREP has \n. In order for this simulation to go through, it must be written.
             PreppedDOD = string.Join("\n",PreppedDOD).Split('\n');
-            
+
             for(int i = 0; i < DOD3.Length; i++) { Assert.AreEqual(DOD3[i],PreppedDOD[i]); }
         }
 
@@ -71,9 +71,28 @@ namespace Igtampe.DictionaryOnDiskTest {
             DOD.Save(PreSave,"TestFile.DOD");
             Dictionary<string,string> PostSave = DOD.Load("TestFile.DOD");
 
-            foreach(string Key in PreSave.Keys) {Assert.AreEqual(PreSave[Key],PostSave[Key]);}
+            foreach(string Key in PreSave.Keys) { Assert.AreEqual(PreSave[Key],PostSave[Key]); }
 
         }
+
+        [TestMethod]
+        public void NullValues() {
+
+            Dictionary<string,string> D = new Dictionary<string,string> {
+                { "C","C" },
+                { "D",null },
+                { "E","E" }
+            };
+
+            DOD.Save(D,"TestFile.DOD");
+            Dictionary<string,string> E = DOD.Load("TestFile.DOD");
+            Assert.AreEqual("C",E["C"]);
+            Assert.IsTrue(string.IsNullOrEmpty(E["D"]));
+            Assert.AreEqual("E",E["E"]);
+
+
+        }
+
 
     }
 }
